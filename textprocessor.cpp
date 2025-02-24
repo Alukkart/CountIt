@@ -16,7 +16,7 @@ int TextProcessor::countSpaces(const QString& text) {
 }
 
 int TextProcessor::countSpecialCharacters(const QString& text) {
-    return text.count(QRegularExpression("[^a-zA-Z0-9\\s\\n\\r]")); // Считает все не-буквенно-цифровые символы
+    return text.count(QRegularExpression("[^a-zA-Z0-9а-яА-Я\\s\\n\\r]")); // Считает все не-буквенно-цифровые символы
 }
 
 int TextProcessor::countLines(const QString& text) {
