@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
-    <height>730</height>
+    <width>917</width>
+    <height>709</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -422,15 +422,10 @@ QSlider::sub-page:vertical {
     <property name="verticalSpacing">
      <number>12</number>
     </property>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="openButton">
-      <property name="font">
-       <font>
-        <fontweight>DemiBold</fontweight>
-       </font>
-      </property>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Открыть файл</string>
+       <string>CountIt ⌨ </string>
       </property>
      </widget>
     </item>
@@ -478,9 +473,9 @@ QSlider::sub-page:vertical {
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>33</red>
-            <green>32</green>
-            <blue>41</blue>
+            <red>30</red>
+            <green>29</green>
+            <blue>35</blue>
            </color>
           </brush>
          </colorrole>
@@ -543,9 +538,9 @@ QSlider::sub-page:vertical {
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>33</red>
-            <green>32</green>
-            <blue>41</blue>
+            <red>30</red>
+            <green>29</green>
+            <blue>35</blue>
            </color>
           </brush>
          </colorrole>
@@ -644,30 +639,6 @@ QSlider::sub-page:vertical {
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QPushButton" name="copyButton">
-      <property name="font">
-       <font>
-        <fontweight>DemiBold</fontweight>
-       </font>
-      </property>
-      <property name="text">
-       <string>Скопировать результаты</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="saveButton">
-      <property name="font">
-       <font>
-        <fontweight>DemiBold</fontweight>
-       </font>
-      </property>
-      <property name="text">
-       <string>Сохранить текст</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
        <number>0</number>
@@ -723,12 +694,69 @@ QSlider::sub-page:vertical {
       </item>
      </layout>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>CountIt ⌨ </string>
+    <item row="4" column="1">
+     <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0,0,0" columnminimumwidth="0,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
       </property>
-     </widget>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="openButton">
+        <property name="font">
+         <font>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="text">
+         <string>Открыть файл</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="copyButton">
+        <property name="font">
+         <font>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="text">
+         <string>Скопировать результаты</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="frequencyButton">
+        <property name="font">
+         <font>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="text">
+         <string>Частота слов</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="saveButton">
+        <property name="font">
+         <font>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="text">
+         <string>Сохранить текст</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -737,7 +765,7 @@ QSlider::sub-page:vertical {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>761</width>
+     <width>917</width>
      <height>20</height>
     </rect>
    </property>

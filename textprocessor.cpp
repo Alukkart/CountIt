@@ -1,3 +1,5 @@
+#include <QMap>
+#include <QStringList>
 #include "textprocessor.h"
 #include <QRegularExpression>
 
@@ -14,7 +16,7 @@ int TextProcessor::countSpaces(const QString& text) {
 }
 
 int TextProcessor::countSpecialCharacters(const QString& text) {
-    return text.count(QRegularExpression("[^a-zA-Z0-9\\s]")); // Считает все не-буквенно-цифровые символы
+    return text.count(QRegularExpression("[^a-zA-Z0-9\\s\\n\\r]")); // Считает все не-буквенно-цифровые символы
 }
 
 int TextProcessor::countLines(const QString& text) {
@@ -32,3 +34,23 @@ QString TextProcessor::applyFilters(const QString& text, bool removePunctuation)
     }
     return text;
 }
+
+QMap<QString, int> TextProcessor::wordFrequency(const QString& text) {
+    QMap<QString, int> frequencyMap;
+
+    // Разбиваем текст на слова с учётом букв и цифр
+    QRegularExpression regex("[а-яА-Яa-zA-Z0-9]+");  // Берём только буквы и цифры
+    QRegularExpressionMatchIterator it = regex.globalMatch(text.toLower());
+
+
+    // Подсчитываем частоту слов
+    while (it.hasNext()) {
+        QRegularExpressionMatch match = it.next();
+        QString word = match.captured(0);
+        frequencyMap[word]++;
+    }
+
+    return frequencyMap;
+}
+
+

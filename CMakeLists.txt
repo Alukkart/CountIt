@@ -16,6 +16,12 @@ qt_add_executable(CountIt
     filehandler.h
     filehandler.cpp
     textprocessor.cpp
+    wordfrequencydialog.h wordfrequencydialog.cpp wordfrequencydialog.ui
+
+
+
+
+
 )
 
 qt_add_translations(

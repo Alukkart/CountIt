@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "textprocessor.h"
 #include "filehandler.h"
+#include "wordfrequencydialog.h"
 #include <QFileDialog>
 #include <QClipboard>
 
@@ -13,11 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->saveButton, &QPushButton::clicked, this, &MainWindow::saveFile);
     connect(ui->textEdit, &QTextEdit::textChanged, this, &MainWindow::updateStatistics);
     connect(ui->copyButton, &QPushButton::clicked, this, &MainWindow::copyResults);
+    connect(ui->frequencyButton, &QPushButton::clicked, this, &MainWindow::showWordFrequency);
 
     ui->textEdit->setStyleSheet("border-radius: 10px; border: 0px; padding: 5px; background-color: #232229;");
     ui->openButton->setStyleSheet("border-radius: 6px; background-color: #232229;");
     ui->saveButton->setStyleSheet("border-radius: 6px; background-color: #232229;");
     ui->copyButton->setStyleSheet("border-radius: 6px; background-color: #232229;");
+    ui->frequencyButton->setStyleSheet("border-radius: 6px; background-color: #232229;");
 
 }
 
@@ -62,3 +65,17 @@ void MainWindow::copyResults() {
     clipboard->setText(results);
 }
 
+void MainWindow::showWordFrequency() {
+    QString text = ui->textEdit->toPlainText();  // Получаем текст из редактора
+
+    QMap<QString, int> wordFreq = TextProcessor::wordFrequency(text);
+
+    // Проверяем, есть ли слова
+    if (wordFreq.isEmpty()) {
+        qDebug() << "В тексте нет слов для анализа!";
+        return;
+    }
+
+    wordfrequencydialog dialog(wordFreq, this);
+    dialog.exec();
+}

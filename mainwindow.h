@@ -19,6 +19,7 @@ private slots:
     void saveFile();
     void updateStatistics();
     void copyResults();
+    void showWordFrequency();
 
 private:
     Ui::MainWindow *ui;

@@ -7,9 +7,10 @@ class TextProcessor {
 public:
     static int countWords(const QString& text);
     static int countCharacters(const QString& text);
-    static int countSpaces(const QString& text);          // Новый метод
-    static int countSpecialCharacters(const QString& text); // Новый метод
+    static int countSpaces(const QString& text);
+    static int countSpecialCharacters(const QString& text);
     static int countLines(const QString& text);
+    static QMap<QString, int> wordFrequency(const QString& text);
     static QString applyFilters(const QString& text, bool removePunctuation);
 };
 
