@@ -29,14 +29,14 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::openFile() {
-    QString filePath = QFileDialog::getOpenFileName(this, "Открыть файл", "", "Текстовые файлы (*.txt *.md *.rtf)");
+    QString filePath = QFileDialog::getOpenFileName(this, "Открыть файл", "", "Текстовые файлы (*.txt)");
     if (!filePath.isEmpty()) {
         ui->textEdit->setText(FileHandler::readFile(filePath));
     }
 }
 
 void MainWindow::saveFile() {
-    QString filePath = QFileDialog::getSaveFileName(this, "Сохранить файл", "", "Текстовые файлы (*.txt *.md *.rtf)");
+    QString filePath = QFileDialog::getSaveFileName(this, "Сохранить файл", "", "Текстовые файлы (*.txt)");
     if (!filePath.isEmpty()) {
         FileHandler::writeFile(filePath, ui->textEdit->toPlainText());
     }
